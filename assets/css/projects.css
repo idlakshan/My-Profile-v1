@@ -1,0 +1,127 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #000000;
+}
+
+.contact-header {
+    position: relative;
+    bottom: 20px;
+    top: 20px;
+
+}
+
+.contact-header h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 0 15px;
+    letter-spacing: 0.13em;
+    text-align: center;
+    color: white;
+}
+
+.line {
+    width: 10%;
+    height: 3px;
+    position: absolute;
+    left: 44.5%;
+    border: 0 none;
+    background-color: #24987E;
+    margin-bottom: 10px;
+
+}
+
+.contact-header p {
+    color: #848484;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 1.6em;
+    letter-spacing: 0.03em;
+
+}
+
+
+.container {
+    margin:  70px auto;
+    position: relative;
+    width: 50%;
+    height: 10px;
+    padding-bottom: 30%;
+    background: #2C2C2C;
+    border: 10px solid black;
+}
+
+.slide-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-img img {
+    width: 100%;
+    height: 100%;
+}
+
+#i1, #i2, #i3 {
+    display: none;
+}
+
+.pre, .nxt {
+    width: 12%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(88, 88, 88, .4);
+    z-index: 99;
+    cursor: pointer;
+}
+
+.pre {
+    left: 0;
+}
+
+.nxt {
+    right: 0;
+}
+
+.nav {
+    width: 100%;
+    height: 11px;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+}
+
+.dots {
+    top: -5px;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: #848484;
+
+}
+
+.slide-img {
+    z-index: -1;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three {
+    z-index: 9;
+}
+
+#i1:checked ~ .nav #dot1,
+#i2:checked ~ .nav #dot2,
+#i3:checked ~ .nav #dot3 {
+    background: #24987E;
+}
+
+

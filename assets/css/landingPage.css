@@ -1,0 +1,183 @@
+body {
+    background-color: #101010;
+    color: white;
+    background-image: url("../images/cover.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-size: 600px 700px;
+}
+
+#main-header {
+    z-index: 1;
+    color: white;
+    width: 100%;
+    position: relative;
+    top: 0;
+
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.name-logo {
+    float: left;
+    text-align: center;
+    padding: 15px 70px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#navbar {
+    float: right;
+    margin-top: 30px;
+    margin-right: 5px;
+
+}
+
+#navbar ul {
+    padding: 10px 0;
+    list-style: none;
+
+}
+
+#navbar li {
+    display: inline;
+    cursor: pointer;
+    padding: 5px 5px;
+
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+    color: #24987E;
+}
+
+.intro {
+    position: absolute;
+    float: left;
+    margin-top: 90px;
+    padding: 60px 0 0 70px;
+    line-height: 1.9em;
+
+}
+
+#my-name {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#my-position {
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contact-button {
+    background: #24987E;
+    width: 115px;
+    height: 45px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #24987E;
+    border-radius: 40px;
+
+
+}
+
+#contact-button:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 30px 0 #24987E inset, 0 5px 30px 0 #24987E,
+    0 5px 30px 0 #24987E inset, 0 5px 30px 0 #24987E;
+    text-shadow: 0 0 2px #24987E, 0 0 2px #24987E;
+}
+
+@media (max-width: 980px) {
+    #my-name {
+        float: none;
+        line-height: 1.2em;
+        width: 100%;
+
+    }
+
+    #my-position {
+        float: none;
+        line-height: 1.2em;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 980px) {
+    #navbar li {
+        padding: 5px 5px;
+    }
+
+    #navbar a {
+        font-size: 15px;
+        padding: 3px 3px;
+    }
+
+}
+
+@media (max-width: 880px) {
+    .name-logo {
+        float: none;
+        height: 40px;
+        padding: 0;
+        margin-bottom: 0;
+
+
+    }
+
+    #navbar {
+        float: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #navbar a {
+        display: block;
+        text-align: center;
+        padding-top: 0;
+
+    }
+
+}
+
+@media (max-width: 870px) {
+    .intro {
+        float: none;
+        text-align: center;
+        margin-top: 0;
+        padding-right: 60px;
+        padding-top: 10px;
+
+    }
+
+    #my-name {
+        font-size: 35px;
+    }
+
+    #my-position {
+        font-size: 25px;
+    }
+
+    #navbar ul {
+        margin: 2px 0 2px 0;
+        padding: 2px 0 2px 0;
+    }
+
+}
+

@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: #101010;
+    color: white;
+
+}
+
+.skill-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #101010;
+    padding-top: 0;
+    color: white;
+}
+.skill-section{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.skill-content{
+    min-height: 180px;
+    width: 400px;
+    padding:  20px;
+    display: inline-block;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    background: #1C1C1C;
+    margin: 20px 70px;
+    transition: 0.3s;
+}
+.section-title{
+    font-size: 40px;
+    margin-top: 65px;
+    margin-bottom: 0;
+    padding: 0 15px;
+    letter-spacing: 0.13em;
+    text-align: center;
+}
+.line{
+    width: 6%;
+    height: 3px;
+    margin-top: 0;
+    border: 0 none;
+    background-color: #24987E;
+    margin-bottom: 5px;
+
+}
+.section-subtitle{
+    color: #848484;
+    text-align: center;
+    line-height: 0.6em;
+    padding-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+.skill-header{
+
+    display: flex;
+    text-align: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.skill-icon,.skill-arrow{
+    size: 2rem;
+    color: #24987E;
+
+}
+.skill-icon{
+    margin-top: 12px;
+    margin-right: 28px;
+}
+.skill-title{
+    font-size: 18px;
+}
+.skill-arrow{
+    margin-top: 15px;
+    margin-left: 63px;
+    transition: 0.4s;
+}
+.skill-name,.skill-number{
+    margin-bottom: 2px;
+}
+.skill-name,.skill-number,.skill-bar{
+    margin-bottom: 10px;
+}
+.skill-number{
+    margin-top: 20px;
+}
+.skill-titles{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.skill-bar,.skill-percentage{
+    height: 5px;
+    border-radius: 25rem;
+}
+.skill-bar{
+    background-color: #848484;
+}
+.skill-percentage{
+    display: block;
+    background-color: #24987E;
+}
+
+.skill-html{
+    width: 90%;
+}
+.skill-css{
+    width: 80%;
+}
+.skill-js{
+    width: 60%;
+}
+.skill-react{
+    width: 85%;
+}
+
+.skill-php{
+    width: 80%;
+}
+.skill-node{
+    width: 70%;
+}
+.skill-java{
+    width: 90%;
+}
+.skill-python{
+    width: 65%;
+}
+.skill-close.skill-list{
+    height: 0;
+
+}
+@media (max-width: 1150px) {
+    .skill-content{
+        width: 300px;
+        display: block;
+        padding: 10px;
+
+    }
+    .skill-container{
+        width: 100%;
+        padding-top: 20px;
+
+    }
+    .skill-titles{
+        font-size: 14px;
+        display: block;
+
+    }
+    .skill-title {
+        font-size: 12px;
+    }
+    .section-title{
+        font-size: 30px;
+        margin-top: 25px;
+        margin-bottom: 5px;
+
+
+    }
+    .section-subtitle{
+        font-size: 14px;
+        line-height: 0.4em;
+    }
+
+
+
+}
