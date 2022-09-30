@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../layouts/case%202/css/fonts/css/all.css">
 
 
     <style>
@@ -34,7 +35,74 @@
         header>ul>li:hover{
             cursor: pointer;
             color: red;
+        }
+        body>main{
+            position: relative;
+        }
+        main>nav{
+            width: 270px;
+            background: rebeccapurple;
+            font-family: 'Noto Sans Mono', monospace;
+            top: 0;
+            bottom: 0;
+            position:absolute;
+            color: white;
+        }
 
+      main>nav>ul{
+          list-style: none;
+          font-size: 22px;
+          margin-top: 39px;
+      }
+        main>nav>ul>li{
+            padding-bottom: 20px;
+        }
+        main>nav>ul>li>a{
+            text-decoration: none;
+            color: white;
+            padding-bottom: 4px;
+            margin-left: 13px;
+        }
+
+        main>section{
+            margin-left: 270px;
+            padding: 10px;
+            min-height: 592px;
+        }
+        main>section>section{
+            height: 300px;
+            position: relative;
+        }
+        main>section>section>div{
+            position: absolute;
+            height: 100%;
+            border-left: 5px solid white;
+            width: calc(100%/3);
+        }
+        main>section>section>div:nth-child(1){
+            left: 0;
+            background-image: url("../../layouts/case 2/images/Dog1.jpg");
+            background-size: cover;
+        }
+        main>section>section>div:nth-child(2){
+            left:calc(100%/3) ;
+            background-image: url("../../layouts/case 2/images/Dog2.jpg");
+            background-size: cover;
+        }
+        main>section>section>div:nth-child(3){
+            left:calc((100%/3)*2) ;
+            background-image: url("../../layouts/case 2/images/Dog3.jpg");
+            background-size: cover;
+        }
+        body>footer{
+            height: 60px;
+            background: #848484;
+        }
+        body>footer>p{
+            margin-top: 0;
+            text-align: center;
+            padding: 20px;
+            color: white;
         }
 
     </style>
@@ -55,10 +123,12 @@
 <main>
 
     <nav>
-        <li>Home</li>
-        <li> Service</li>
-        <li>Contact</li>
-        <li>About Us</li>
+        <ul>
+            <li><i class="fa-sharp fa-solid fa-house-chimney"></i><a href="">Home</a></li>
+            <li><i class="fa-solid fa-globe"></i><a href="">Service</a> </li>
+            <li><i class="fa-solid fa-phone"></i><a href="">Contact</a></li>
+            <li><i class="fa-solid fa-user-plus"></i><a href="">About Us</a></li>
+        </ul>
     </nav>
     <section>
         <section>
@@ -98,6 +168,7 @@
             fuga fugit
             harum laboriosam, laudantium libero molestias nostrum obcaecati perferendis quaerat tempore
             ullam ut veritatis voluptate.</p>
+
 
 
     </section>
