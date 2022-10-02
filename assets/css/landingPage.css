@@ -4,7 +4,8 @@ body {
     background-image: url("../images/cover.png");
     background-repeat: no-repeat;
     background-position-x: right;
-    background-size: 600px 700px;
+    background-size: 620px 750px;
+
 }
 
 #main-header {
@@ -13,7 +14,6 @@ body {
     width: 100%;
     position: relative;
     top: 0;
-
 }
 
 .container {
