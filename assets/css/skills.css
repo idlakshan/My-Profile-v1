@@ -139,7 +139,7 @@ body {
     height: 0;
 
 }
-@media (max-width: 1150px) {
+@media (max-width: 1090px) {
     .skill-content{
         width: 300px;
         display: block;
