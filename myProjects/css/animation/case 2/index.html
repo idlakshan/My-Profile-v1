@@ -8,6 +8,9 @@
 
 </head>
 <style>
+    body{
+        background: #2C2C2C;
+    }
     main {
         width: 700px;
         height: 400px;
@@ -15,48 +18,87 @@
         left: 0;
         right: 0;
         top: 0;
-        bottom: 0;
+        bottom: 25px;
         margin: auto;
-        overflow-x: scroll;
-        overflow-y: hidden;
+        overflow: hidden;
+        border: 5px solid white;
     }
-    main>section{
+
+    main > section {
         width: 400%;
         height: 100%;
         display: flex;
+        animation-name: slideMe;
+        animation-duration: 10s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+
 
     }
-    main>section>div{
+
+    main > section > div {
         width: 100%;
     }
-    section>div:nth-child(1){
+
+    section > div:nth-child(1) {
         background-image: url("../../animation/case 2/images/1.jpg");
         background-size: cover;
         background-position: center;
 
     }
-    section>div:nth-child(2){
+
+    section > div:nth-child(2) {
         background-image: url("../../animation/case 2/images/2.jpg");
         background-size: cover;
         background-position: center;
 
     }
-    section>div:nth-child(3){
+
+    section > div:nth-child(3) {
         background-image: url("../../animation/case 2/images/3.jpg");
         background-size: cover;
         background-position: center;
 
     }
-    section>div:nth-child(4){
+
+    section > div:nth-child(4) {
         background-image: url("../../animation/case 2/images/4.jpg");
         background-size: cover;
         background-position: center;
+
+    }
+    body>section{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        height: max-content ;
+        color: white;
+        font-family: Ubuntu, serif;
+        font-weight: bold;
+        margin-top: 30px;
+        font-size: 30px;
+    }
+
+    @keyframes slideMe {
+        0%,15% {
+            transform: translateX(0);
+        }
+        25%,40% {
+            transform: translateX(-25%);
+        }
+        50%,70% {
+            transform: translateX(-50%);
+        }
+        80%,100% {
+            transform: translateX(-75%);
+        }
 
     }
 
 </style>
 <body>
 <main>
+
     <section>
         <div></div>
         <div></div>
@@ -64,5 +106,8 @@
         <div></div>
     </section>
 </main>
+<section>
+    <h2>CSS Slider</h2>
+</section>
 </body>
 </html>
