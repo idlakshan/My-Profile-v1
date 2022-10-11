@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-opacity-50 bg-dark">
+<nav class="navbar navbar-expand-lg bg-opacity-50 bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">
             <img alt="" class="d-inline-block align-top" height="30" src="assets/img/shop-icon.png" width="30">
@@ -40,7 +40,7 @@
     </div>
 </nav>
 <main class="container-fluid">
-    <section class="row mt-5">
+    <section class="row mt-5 pt-5">
             <div class="card col-12 col-lg-4" >
                 <img src="assets/img/customer.jpg " height="407px" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -66,6 +66,79 @@
             </div>
         </div>
     </section>
+
+    <section class=" row mt-5 pt-5 ">
+        <h2 class="mb-3">Customer Registration</h2>
+        <div class="ms-2 col-12 col-lg-4">
+            <div class="mb-3 ">
+                <label for="formGroupExampleInput" class="form-label">Customer ID</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+            </div>
+            <div class="mb-3 ">
+                <label for="formGroupExampleInput3" class="form-label">Customer Address</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input placeholder">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput4" class="form-label">Customer Salary</label>
+                <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Another input placeholder">
+            </div>
+
+            <div class="btn-group mt-2 mb-5 ms-lg-2" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-primary">Save Customer</button>
+                <button type="button" class="btn btn-danger">Remove</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-success">Get All</button>
+                <button type="button" class="btn btn-danger">Clear All</button>
+            </div>
+        </div>
+
+        <div class="ms-lg-5 col-12 col-lg-7">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="table-warning" scope="col">Customer ID</th>
+                    <th class="table-warning" scope="col">Customer Name</th>
+                    <th class="table-warning" scope="col">Customer Address</th>
+                    <th class="table-warning" scope="col">Customer Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
 
 </main>
 
