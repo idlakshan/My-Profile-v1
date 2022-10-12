@@ -1,10 +1,11 @@
-body {
+body>section {
     background-color: #101010;
     color: white;
     background-image: url("../images/cover.png");
     background-repeat: no-repeat;
     background-position-x: right;
-    background-size: 620px 750px;
+   height: 100vh;
+    background-size: 700px;
 
 }
 

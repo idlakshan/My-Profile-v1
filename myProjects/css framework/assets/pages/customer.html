@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../boostrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section class=" row mt-5 pt-5 ">
+    <h2 class="mb-3">Customer Registration</h2>
+    <div class="ms-2 col-12 col-lg-4">
+        <div class="mb-3 ">
+            <label class="form-label" for="formGroupExampleInput">Customer ID</label>
+            <input class="form-control" id="formGroupExampleInput" placeholder="Your ID" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="formGroupExampleInput2">Customer Name</label>
+            <input class="form-control" id="formGroupExampleInput2" placeholder="Your Name" type="text">
+        </div>
+        <div class="mb-3 ">
+            <label class="form-label" for="formGroupExampleInput3">Customer Address</label>
+            <input class="form-control" id="formGroupExampleInput3" placeholder="Your Address" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="formGroupExampleInput4">Customer Salary</label>
+            <input class="form-control" id="formGroupExampleInput4" placeholder="Your Salary" type="text">
+        </div>
+
+        <div aria-label="Basic mixed styles example" class="btn-group mt-2 mb-5 ms-lg-2" role="group">
+            <button class="btn btn-primary" type="button">Save Customer</button>
+            <button class="btn btn-danger" type="button">Remove</button>
+            <button class="btn btn-warning" type="button">Update</button>
+            <button class="btn btn-success" type="button">Get All</button>
+            <button class="btn btn-danger" type="button">Clear All</button>
+        </div>
+    </div>
+
+    <div class="ms-lg-5 col-12 col-lg-7">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="table-warning" scope="col">Customer ID</th>
+                <th class="table-warning" scope="col">Customer Name</th>
+                <th class="table-warning" scope="col">Customer Address</th>
+                <th class="table-warning" scope="col">Customer Salary</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<script src="../boostrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
