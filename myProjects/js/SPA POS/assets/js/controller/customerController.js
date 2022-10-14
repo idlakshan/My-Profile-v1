@@ -1,4 +1,6 @@
+
 //---------------------save customer----------------
+
 $("#btnSaveCustomer").click(function (){
     let customerId =$("#txtCusID").val();
     let customerName=$("#txtCusName").val();
@@ -8,8 +10,10 @@ $("#btnSaveCustomer").click(function (){
     var customerOB=new CustomerDTO(customerId,customerName,customerAddress,customerSalary);
 
     customerDB.push(customerOB);
-    loadAllCustomer();
     clearFields();
+    loadAllCustomer();
+
+
 
 });
 
@@ -77,6 +81,7 @@ $("#btnUpdateCustomer").click(function (){
      loadAllCustomer()
      clearFields();
 
+
 });
 
 //---------------------delete customer------------------
@@ -90,6 +95,7 @@ $("#btnUpdateCustomer").click(function (){
         clearFields();
         loadAllCustomer();
 
+
     });
 $("#btnClearTextField").click(function (){
     clearFields();
@@ -99,6 +105,27 @@ $("#btnClearTextField").click(function (){
 function clearFields (){
         $("#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary").val("");
 }
+
+//-------Field Focusing--------
+$("#txtCusID").keydown(function (event) {
+    if (event.key == "Enter") {
+        $("#txtCusName").focus();
+    }
+});
+
+$("#txtCusName").keydown(function (event) {
+    if (event.key == "Enter") {
+        $("#txtCusAddress").focus();
+    }
+});
+
+$("#txtCusAddress").keydown(function (event) {
+    if (event.key == "Enter") {
+        $("#txtCusSalary").focus();
+    }
+});
+
+
 
 
 

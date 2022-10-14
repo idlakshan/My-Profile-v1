@@ -1,1 +1,2 @@
 var customerDB = [];
+var itemDB=[];

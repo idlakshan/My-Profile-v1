@@ -138,27 +138,27 @@
             <h2 class="mb-3">Item Registration</h2>
             <div class="ms-2 col-12 col-lg-4">
                 <div class="mb-3 ">
-                    <label class="form-label" for="formGroupExampleInput0">Item Code</label>
-                    <input class="form-control" id="formGroupExampleInput0" placeholder="Code" type="text">
+                    <label class="form-label" for="txtItemID">Item Code</label>
+                    <input class="form-control" id="txtItemID" placeholder="Code" type="text">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="formGroupExampleInputA">Item Name</label>
-                    <input class="form-control" id="formGroupExampleInputA" placeholder="Name" type="text">
+                    <label class="form-label" for="txtItemName">Item Name</label>
+                    <input class="form-control" id="txtItemName" placeholder="Name" type="text">
                 </div>
                 <div class="mb-3 ">
-                    <label class="form-label" for="formGroupExampleInputB">Item Qty</label>
-                    <input class="form-control" id="formGroupExampleInputB" placeholder="Qty" type="text">
+                    <label class="form-label" for="txtItemQty">Item Qty</label>
+                    <input class="form-control" id="txtItemQty" placeholder="Qty" type="text">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="formGroupExampleInputC">Unit Price</label>
-                    <input class="form-control" id="formGroupExampleInputC" placeholder="Unit Price" type="text">
+                    <label class="form-label" for="txtItemPrice">Unit Price</label>
+                    <input class="form-control" id="txtItemPrice" placeholder="Unit Price" type="text">
                 </div>
 
                 <div aria-label="Basic mixed styles example" class="btn-group mt-2 mb-5 ms-lg-2" role="group">
-                    <button class="btn btn-primary" type="button">Save Item</button>
-                    <button class="btn btn-danger" type="button">Remove</button>
-                    <button class="btn btn-warning" type="button">Update</button>
-                    <button class="btn btn-secondary" type="button">Clear All</button>
+                    <button class="btn btn-primary" type="button" id="btnSaveItem">Save Item</button>
+                    <button class="btn btn-danger" type="button" id="btnRemoveItem">Remove</button>
+                    <button class="btn btn-warning" type="button" id="btnUpdateItem">Update</button>
+                    <button class="btn btn-secondary" type="button" id="btnClearItemTextField">Clear All</button>
                 </div>
                 <div class="mb-3 ">
                     <label class="form-label" for="txtItemSearch">Search Item</label>
@@ -178,7 +178,7 @@
                         <th class="table-warning" scope="col">Unit Price</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tblItem">
 
                     </tbody>
                 </table>
@@ -350,7 +350,9 @@
 <script src="assets/JQuery/jquery-3.6.1.min.js"></script>
 <script src="assets/js/controller/DashboardController.js"></script>
 <script src="assets/js/controller/customerController.js"></script>
+<script src="assets/js/controller/itemController.js"></script>
 <script src="assets/js/model/CustomerDTO.js"></script>
+<script src="assets/js/model/ItemDTO.js"></script>
 <script src="assets/js/db/DB.js"></script>
 
 </body>
