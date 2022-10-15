@@ -1,131 +1,77 @@
 
-//---------------------save customer----------------
-
+//----------------------Save Customer-----------------------
 $("#btnSaveCustomer").click(function (){
-    let customerId =$("#txtCusID").val();
+    let customerId=$("#txtCusID").val();
     let customerName=$("#txtCusName").val();
     let customerAddress=$("#txtCusAddress").val();
     let customerSalary=$("#txtCusSalary").val();
 
-    var customerOB=new CustomerDTO(customerId,customerName,customerAddress,customerSalary);
+    let CustomerObject=new CustomerDTO(customerId,customerName,customerAddress,customerSalary);
 
-    customerDB.push(customerOB);
-    clearFields();
+    customersDB.push(CustomerObject);
     loadAllCustomer();
+    cleartextFields();
 
+ });
 
-
-});
-
-//-------------------loadAllCustomers--------------------
-function loadAllCustomer (){
+ function loadAllCustomer(){
     $("#tblCustomer").empty();
-    for (var i of customerDB){
-        let raw = `<tr><td>${i.getCustomerID()}</td><td>${i.getCustomerName()}</td><td>${i.getCustomerAddress()}</td><td>${i.getCustomerSalary()}</td></tr>`
-        $("#tblCustomer").append(raw);
+    for (let customer of customersDB) {
+        let row = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td></tr>`;
+        $("#tblCustomer").append(row);
+
     }
-    bindCustomer();
+    bindRowClickEvent();
 }
 
-//-----------------------Search Customer---------------
+//-----------------Search Customer----------------
 $("#btnSearchCustomer").click(function (){
-    var searchId = $("#txtCusSearch").val();
-    var response = searchCustomer(searchId);
-    if (response){
-        $("#txtCusID").val(response.getCustomerID());
-        $("#txtCusName").val(response.getCustomerName());
-        $("#txtCusAddress").val(response.getCustomerAddress());
-        $("#txtCusSalary").val(response.getCustomerSalary());
-    }else {
-        alert("Invalid customer Search");
-        clearFields();
-    }
-});
-function searchCustomer (id){
-    for (let i=0;i<customerDB.length;i++){
-        if (customerDB[i].getCustomerID()===id){
-            return customerDB[i];
-        }
-    }
-}
-//------click table raw---------
-function bindCustomer (){
-    $("#tblCustomer > tr").click(function (){
-        let customerId = $(this).children(":eq(0)").text();
-        let customerName = $(this).children(":eq(1)").text();
-        let customerAddress = $(this).children(":eq(2)").text();
-        let customerSalary = $(this).children(":eq(3)").text();
+  let TypedId=$("#txtCusSearch").val();
+  let customer=searchCustomer(TypedId);
+  if (customer!=null){
+      $("#txtCusID").val(customer.id);
+      $("#txtCusName").val(customer.name);
+      $("#txtCusAddress").val(customer.address);
+      $("#txtCusSalary").val(customer.salary);
 
-        $("#txtCusID").val(customerId);
-        $("#txtCusName").val(customerName);
-        $("#txtCusAddress").val(customerAddress);
-        $("#txtCusSalary").val(customerSalary);
-
-    });
-}
-
-//---------------------update customer------------------
-$("#btnUpdateCustomer").click(function (){
-    let customerId = $("#txtCusID").val();
-    let customerName = $("#txtCusName").val();
-    let customerAddress = $("#txtCusAddress").val();
-    let customerSalary = $("#txtCusSalary").val();
-
-    for (var i=0;i<customerDB.length;i++){
-        if (customerDB[i].getCustomerID()===customerId){
-            customerDB[i].setCustomerName(customerName);
-            customerDB[i].setCustomerAddress(customerAddress);
-            customerDB[i].setCustomerSalary(customerSalary);
-        }
-    }
-     loadAllCustomer()
-     clearFields();
-
+      $("#txtCusSearch").val("");
+  }else{
+      alert("There is no customer available for this "+TypedId);
+  }
 
 });
-
-//---------------------delete customer------------------
-    $("#btnRemoveCustomer").click(function (){
-        let cusId=$("#txtCusID").val();
-        for (let i=0;i<customerDB.length;i++){
-            if (customerDB[i].getCustomerID()===cusId){
-                customerDB.splice(i,1);
-            }
+function searchCustomer(cusId){
+    for (let customer of customersDB) {
+        if(customer.id==cusId){
+            return customer;
         }
-        clearFields();
-        loadAllCustomer();
-
-
-    });
+    }
+     return null;
+}
+//-------------------Clear Text Fields---------------
 $("#btnClearTextField").click(function (){
-    clearFields();
+    cleartextFields();
 });
 
-//---------------------ClearTextFields---------------------
-function clearFields (){
-        $("#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary").val("");
+//--------------------Row Clicked----------------
+function bindRowClickEvent(){
+    $("#tblCustomer>tr").click(function (){
+        let cusId=$(this).children(":eq(0)").text();
+        let cusName=$(this).children(":eq(1)").text();
+        let cusAddress=$(this).children(":eq(2)").text();
+        let cusSalary=$(this).children(":eq(3)").text();
+
+        $("#txtCusID").val(cusId);
+        $("#txtCusName").val(cusName);
+        $("#txtCusAddress").val(cusAddress);
+        $("#txtCusSalary").val(cusSalary);
+
+    });
 }
 
-//-------Field Focusing--------
-$("#txtCusID").keydown(function (event) {
-    if (event.key == "Enter") {
-        $("#txtCusName").focus();
-    }
-});
-
-$("#txtCusName").keydown(function (event) {
-    if (event.key == "Enter") {
-        $("#txtCusAddress").focus();
-    }
-});
-
-$("#txtCusAddress").keydown(function (event) {
-    if (event.key == "Enter") {
-        $("#txtCusSalary").focus();
-    }
-});
 
 
-
-
-
+function cleartextFields(){
+    $("#txtCusID").focus();
+    $("#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary").val("");
+}

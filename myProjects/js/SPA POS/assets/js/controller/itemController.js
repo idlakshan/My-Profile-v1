@@ -1,3 +1,4 @@
+
 //---------------------save item----------------
 $("#btnSaveItem").click(function (){
     let itemId = $("#txtItemID").val();
@@ -54,6 +55,7 @@ $("#btnRemoveItem").click(function (){
     }
     clearItemFields();
    loadAllItem();
+   generateItemId();
 });
 
 //---------------------update item------------------
@@ -92,7 +94,6 @@ function bindItem (){
 
 }
 
-
 //---------------------ClearTextFields---------------------
 function clearItemFields (){
     $("#txtItemID,#txtItemName,#txtItemQty,#txtItemPrice").val("");
@@ -100,3 +101,7 @@ function clearItemFields (){
 $("#btnClearItemTextField").click(function (){
     clearItemFields();
 });
+
+
+
+
