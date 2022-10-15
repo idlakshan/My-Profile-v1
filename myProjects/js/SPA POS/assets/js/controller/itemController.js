@@ -1,107 +1,78 @@
-
-//---------------------save item----------------
+//---------------------Save Item-------------------
 $("#btnSaveItem").click(function (){
-    let itemId = $("#txtItemID").val();
-    let itemName = $("#txtItemName").val();
-    let itemQty = $("#txtItemQty").val();
-    let itemPrice = $("#txtItemPrice").val();
+    let itemCode= $("#txtItemCode").val();
+    let itemName= $("#txtItemName").val();
+    let itemQty= $("#txtItemQty").val();
+    let itemPrice= $("#txtItemPrice").val();
 
+    let ItemObject=new ItemDTO(itemCode,itemName,itemQty,itemPrice);
 
-    var itemOB=new ItemDTO(itemId,itemName,itemQty,itemPrice);
+    itemDB.push(ItemObject);
+    loadAllItems();
+    cleartextFields();
 
-    itemDB.push(itemOB);
-    loadAllItem();
-    clearItemFields();
 });
 
-function loadAllItem (){
+function loadAllItems(){
     $("#tblItem").empty();
-    for (var i of itemDB){
-        let raw = `<tr><td>${i.getItemID()}</td><td>${i.getItemName()}</td><td>${i.getItemQty()}</td><td>${i.getItemPrice()}</td></tr>`
-        $("#tblItem").append(raw);
-
+    for (let item of itemDB ) {
+        var row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.qty}</td><td>${item.price}</td></tr>`;
+        $("#tblItem").append(row);
     }
-    bindItem();
+    bindRowClickEvent();
 }
-
-//-----------------------Search Item---------------
+//-------------Search Item---------------
 $("#btnSearchItem").click(function (){
-    var searchId = $("#txtItemSearch").val();
-    var response = searchItem(searchId);
-    if (response){
-        $("#txtItemID").val(response.getItemID());
-        $("#txtItemName").val(response.getItemName());
-        $("#txtItemQty").val(response.getItemQty());
-        $("#txtItemPrice").val(response.getItemPrice());
-    }else {
-        alert("Invalid Item Search");
-        clearItemFields();
-    }
-});
-function searchItem (id){
-    for (let i=0;i<itemDB.length;i++){
-        if (itemDB[i].getItemID()===id){
-            return itemDB[i];
+   let typedCode= $("#txtItemSearch").val();
+   let item=searchItem(typedCode);
+
+   if (item!=null){
+       $("#txtItemCode").val(item.code);
+       $("#txtItemName").val(item.name);
+       $("#txtItemQty").val(item.qty);
+       $("#txtItemPrice").val(item.price);
+
+       $("#txtItemSearch").val("");
+   }
+
+})
+
+function searchItem(itemCode){
+    for (let item of itemDB) {
+        if (item.code==itemCode){
+            return item;
         }
+
     }
+    return null
 }
-//---------------------delete item------------------
-$("#btnRemoveItem").click(function (){
-    let getClickItemData=$("#txtItemID").val();
-    for (let i=0;i<itemDB.length;i++){
-        if (itemDB[i].getItemID()===getClickItemData){
-            itemDB.splice(i, 1);
-        }
-    }
-    clearItemFields();
-   loadAllItem();
-   generateItemId();
-});
 
-//---------------------update item------------------
-$("#btnUpdateItem").click(function (){
-    let itemId = $("#txtItemID").val();
-    let itemName = $("#txtItemName").val();
-    let itemQty = $("#txtItemQty").val();
-    let itemPrice = $("#txtItemPrice").val();
+//--------------------Row Clicked----------------
+function bindRowClickEvent(){
+    $("#tblItem>tr").click(function (){
+        let itemCode=$(this).children(":eq(0)").text();
+        let itemName=$(this).children(":eq(1)").text();
+        let itemQty=$(this).children(":eq(2)").text();
+        let itemPrice=$(this).children(":eq(3)").text();
 
-    for (var i=0;i<itemDB.length;i++){
-        if ( itemDB[i].getItemID()==itemId){
-            itemDB[i].setItemName(itemName);
-            itemDB[i].setItemQty(itemQty);
-            itemDB[i].setItemPrice(itemPrice);
-        }
-    }
-    loadAllItem();
-    clearItemFields();
-
-});
-
-//------click table raw---------
-function bindItem (){
-    $("#tblItem > tr").click(function (){
-        let itemId = $(this).children(":eq(0)").text();
-        let itemName = $(this).children(":eq(1)").text();
-        let itemQty = $(this).children(":eq(2)").text();
-        let itemPrice = $(this).children(":eq(3)").text();
-
-        $("#txtItemID").val(itemId);
+        $("#txtItemCode").val(itemCode);
         $("#txtItemName").val(itemName);
         $("#txtItemQty").val(itemQty);
         $("#txtItemPrice").val(itemPrice);
 
     });
-
 }
 
-//---------------------ClearTextFields---------------------
-function clearItemFields (){
-    $("#txtItemID,#txtItemName,#txtItemQty,#txtItemPrice").val("");
-}
+
+//-------------------Clear Text Fields---------------
 $("#btnClearItemTextField").click(function (){
-    clearItemFields();
+   cleartextFields();
 });
 
+function cleartextFields(){
+    $("#txtItemCode").focus();
+    $("#txtItemCode,#txtItemName,#txtItemQty,#txtItemPrice").val("");
+}
 
 
 

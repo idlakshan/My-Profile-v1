@@ -68,6 +68,7 @@ function bindRowClickEvent(){
 
     });
 }
+//--------------------Update Customer--------------
 
 
 
