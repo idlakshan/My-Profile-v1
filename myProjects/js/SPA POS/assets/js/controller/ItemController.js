@@ -1,3 +1,4 @@
+generateCode();
 //---------------------Save Item-------------------
 $("#btnSaveItem").click(function () {
     let itemCode = $("#txtItemCode").val();
@@ -10,6 +11,7 @@ $("#btnSaveItem").click(function () {
     itemDB.push(ItemObject);
     loadAllItems();
     clearItemTextFields();
+    generateCode();
 
 });
 
@@ -20,6 +22,7 @@ function loadAllItems() {
         $("#tblItem").append(row);
     }
     bindRowClickEvent();
+    loadItemCodeForCombo();
 }
 
 //-------------Search Item---------------
@@ -72,6 +75,7 @@ $("#btnRemoveItem").click(function () {
     if (deleteItem(deleteCode)) {
         alert("Item Successfully Deleted..");
         clearItemTextFields();
+        generateCode();
     } else {
         alert("No such Item to delete, please check Code");
     }
@@ -96,6 +100,7 @@ $("#btnUpdateItem").click(function () {
     let response = updateItem(updateId);
     if (response) {
         alert("Item Updated Successfully..")
+        generateCode();
     } else {
         alert("Item failed")
     }
@@ -127,6 +132,30 @@ function clearItemTextFields() {
     $("#txtItemCode").focus();
     $("#txtItemCode,#txtItemName,#txtItemQty,#txtItemPrice").val("");
 }
+
+//-----------Auto generate Id--------------
+function generateCode() {
+    let index = itemDB.length - 1;
+    let code;
+    let temp;
+    if (index != -1) {
+        code = customersDB[customersDB.length - 1].code;
+        temp = code.split("-")[1];
+        temp++;
+    }
+
+    if (index == -1) {
+        $("#txtItemCode").val("I00-001");
+    } else if (temp <= 9) {
+        $("#txtItemCode").val("I00-00" + temp);
+    } else if (temp <= 99) {
+        $("#txtItemCode").val("I00-0" + temp);
+    } else {
+        $("#txtItemCode").val("I00-" + temp);
+    }
+
+}
+
 
 
 

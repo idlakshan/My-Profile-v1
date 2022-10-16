@@ -1,4 +1,4 @@
-
+generateId();
 //----------------------Save Customer-----------------------
 $("#btnSaveCustomer").click(function (){
     let customerId=$("#txtCusID").val();
@@ -11,6 +11,8 @@ $("#btnSaveCustomer").click(function (){
     customersDB.push(CustomerObject);
     loadAllCustomer();
     clearCustomerTextFields();
+    loadCusIdForCombo();
+    generateId();
 
  });
 
@@ -22,6 +24,9 @@ $("#btnSaveCustomer").click(function (){
 
     }
     bindRowCustomerClickEvent();
+    loadCusIdForCombo();
+
+
 }
 
 //-----------------Search Customer----------------
@@ -74,6 +79,7 @@ $("#btnRemoveCustomer").click(function (){
     if(deleteCustomer(deleteId)){
         alert("Customer Successfully Deleted..");
         clearCustomerTextFields();
+        generateId();
     }else {
         alert("No such customer to delete, please check id");
     }
@@ -98,9 +104,12 @@ $("#btnUpdateCustomer").click(function (){
     let updateId=$("#txtCusID").val();
     let response=updateCustomer(updateId);
     if (response){
-        alert("Customer Updated Successfully..")
+        alert("Customer Updated Successfully..");
+        clearCustomerTextFields();
+        generateId();
+
     }else{
-        alert("Updated failed")
+        alert("Updated failed");
     }
 });
 
@@ -123,4 +132,27 @@ function updateCustomer(cusId){
 function clearCustomerTextFields(){
     $("#txtCusID").focus();
     $("#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary").val("");
+}
+
+//-----------Auto generate Id--------------
+function generateId() {
+    let index = customersDB.length - 1;
+    let id;
+    let temp;
+    if (index != -1) {
+        id = customersDB[customersDB.length - 1].id;
+        temp = id.split("-")[1];
+        temp++;
+    }
+
+    if (index == -1) {
+        $("#txtCusID").val("C00-001");
+    } else if (temp <= 9) {
+        $("#txtCusID").val("C00-00" + temp);
+    } else if (temp <= 99) {
+        $("#txtCusID").val("C00-0" + temp);
+    } else {
+        $("#txtCusID").val("C00-" + temp);
+    }
+
 }
