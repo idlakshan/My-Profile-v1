@@ -10,7 +10,7 @@ $("#btnSaveCustomer").click(function (){
 
     customersDB.push(CustomerObject);
     loadAllCustomer();
-    cleartextFields();
+    clearCustomerTextFields();
 
  });
 
@@ -21,7 +21,7 @@ $("#btnSaveCustomer").click(function (){
         $("#tblCustomer").append(row);
 
     }
-    bindRowClickEvent();
+    bindRowCustomerClickEvent();
 }
 
 //-----------------Search Customer----------------
@@ -50,11 +50,11 @@ function searchCustomer(cusId){
 }
 //-------------------Clear Text Fields---------------
 $("#btnClearTextField").click(function (){
-    cleartextFields();
+    clearCustomerTextFields();
 });
 
 //--------------------Row Clicked----------------
-function bindRowClickEvent(){
+function bindRowCustomerClickEvent(){
     $("#tblCustomer>tr").click(function (){
         let cusId=$(this).children(":eq(0)").text();
         let cusName=$(this).children(":eq(1)").text();
@@ -68,11 +68,59 @@ function bindRowClickEvent(){
 
     });
 }
-//--------------------Update Customer--------------
+//--------------------Delete Customer-----------------
+$("#btnRemoveCustomer").click(function (){
+    let deleteId=$("#txtCusID").val();
+    if(deleteCustomer(deleteId)){
+        alert("Customer Successfully Deleted..");
+        clearCustomerTextFields();
+    }else {
+        alert("No such customer to delete, please check id");
+    }
+
+});
 
 
+function deleteCustomer(cusId){
+    let customer=searchCustomer(cusId);
+    if (customer != null){
+        let indexNo= customersDB.indexOf(customer);
+        customersDB.splice(indexNo,1);
+        loadAllCustomer();
+        return true;
 
-function cleartextFields(){
+    }
+    return false;
+}
+//----------Update Customer-----------------
+
+$("#btnUpdateCustomer").click(function (){
+    let updateId=$("#txtCusID").val();
+    let response=updateCustomer(updateId);
+    if (response){
+        alert("Customer Updated Successfully..")
+    }else{
+        alert("Updated failed")
+    }
+});
+
+
+function updateCustomer(cusId){
+    let customer=searchCustomer(cusId);
+    if(customer!=null){
+        customer.id=$("#txtCusID").val();
+        customer.name=$("#txtCusName").val();
+        customer.address=$("#txtCusAddress").val();
+        customer.salary=$("#txtCusSalary").val();
+
+        loadAllCustomer();
+        return true;
+
+    }
+    return false;
+}
+
+function clearCustomerTextFields(){
     $("#txtCusID").focus();
     $("#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary").val("");
 }
