@@ -17,33 +17,46 @@
 
 </head>
 <body>
-<section>
-    <header id="main-header">
-        <div class="container">
-            <div class="name-logo ">
-                <h2>Dimuthu Lakshan.</h2>
+<div id="loader">
+    <div>
+
+    </div>
+</div>
+
+    <section class="main">
+        <header id="main-header">
+            <div class="container">
+                <div class="name-logo ">
+                    <h2>Dimuthu Lakshan.</h2>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="assets/pages/aboutMe.html">About</a></li>
+                        <li><a href="assets/pages/services.html">Services</a></li>
+                        <li><a href="assets/pages/skills.html">Skills</a></li>
+                        <li><a href="assets/pages/projects.html">Projects</a></li>
+                        <li><a href="assets/pages/contactMe.html">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav id="navbar">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="assets/pages/aboutMe.html">About</a></li>
-                    <li><a href="assets/pages/services.html">Services</a></li>
-                    <li><a href="assets/pages/skills.html">Skills</a></li>
-                    <li><a href="assets/pages/projects.html">Projects</a></li>
-                    <li><a href="assets/pages/contactMe.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="intro-section">
-        <div class="intro">
-            <h2 id="my-name">I am Dimuthu Lakshan</h2>
-            <p id="my-position">I am Full-Stack Developer</p>
-            <button id="contact-button"><a href="assets/pages/contactMe.html" style="text-decoration: none;color: white"><b>Contact</b></a></button>
-        </div>
+        </header>
+        <section id="intro-section">
+            <div class="intro">
+                <h2 id="my-name">I am Dimuthu Lakshan</h2>
+                <p id="my-position">I am Full-Stack Developer</p>
+                <button id="contact-button"><a href="assets/pages/contactMe.html" style="text-decoration: none;color: white"><b>Contact</b></a></button>
+            </div>
+        </section>
     </section>
-</section>
 
 
+<script src="../MyProfile/assets/js/jquery-3.6.1.min.js"></script>
+<script>
+    $(window).on('load',function (){
+        $('#loader').fadeOut(1000);
+
+    });
+</script>
 </body>
 </html>
