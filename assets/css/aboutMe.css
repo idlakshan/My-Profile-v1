@@ -71,8 +71,8 @@ body {
 
 #download-cv-button:hover {
     cursor: pointer;
-    box-shadow: 0 5px 10px 0 #24987E inset, 0 5px 10px 0 #24987E,
-    0 5px 10px 0 #24987E inset, 0 5px 10px 0 #24987E;
+    box-shadow: 0 5px 30px 0 #24987E inset, 0 5px 30px 0 #24987E,
+    0 5px 30px 0 #24987E inset, 0 5px 30px 0 #24987E;
     text-shadow: 0 0 2px #24987E, 0 0 2px #24987E;
 }
 
