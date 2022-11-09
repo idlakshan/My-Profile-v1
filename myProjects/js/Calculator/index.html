@@ -14,36 +14,36 @@
 
 <main class="container">
     <div align="center">
-        <input type="text" class="form-control input-lg">
+        <input type="text" class="form-control input-lg" id="txt_Equation">
     </div>
     
 
     <div align="center">
-        <button class="btn btn-light btn-num btn-lg">7</button>
-        <button class="btn btn-light btn-num btn-lg">8</button>
-        <button class="btn btn-light btn-num btn-lg">9</button>
-        <button class="btn btn-light btn-act btn-lg">&divide;</button>
+        <button class="btn btn-light btn-lg" id="btn_Seven" >7</button>
+        <button class="btn btn-light btn-lg" id="btn_Eight" >8</button>
+        <button class="btn btn-light btn-lg" id="btn_Nine" >9</button>
+        <button class="btn btn-light btn-lg" id="btn_Divide">/</button>
     </div>
 
     <div align="center">
-        <button class="btn btn-light btn-num btn-lg">4</button>
-        <button class="btn btn-light btn-num btn-lg">5</button>
-        <button class="btn btn-light btn-num btn-lg">6</button>
-        <button class="btn btn-light btn-act btn-lg">&times;</button>
+        <button class="btn btn-light btn-lg" id="btn_Four">4</button>
+        <button class="btn btn-light btn-lg" id="btn_Five">5</button>
+        <button class="btn btn-light btn-lg" id="btn_Six">6</button>
+        <button class="btn btn-light btn-lg" id="btn_Star">*</button>
     </div>
 
     <div align="center">
-        <button class="btn btn-light btn-num btn-lg">1</button>
-        <button class="btn btn-light btn-num btn-lg">2</button>
-        <button class="btn btn-light btn-num btn-lg">3</button>
-        <button class="btn btn-light btn-act btn-lg">-</button>
+        <button class="btn btn-light btn-lg" id="btn_One">1</button>
+        <button class="btn btn-light btn-lg" id="btn_Two">2</button>
+        <button class="btn btn-light btn-lg" id="btn_Three">3</button>
+        <button class="btn btn-light btn-lg" id="btn_Minus">-</button>
     </div>
 
     <div align="center">
-        <button class="btn btn-warning btn-act btn-lg">CLEAR</button>
-        <button class="btn btn-light btn-num btn-lg">0</button>
-        <button class="btn btn-success btn-act btn-lg">=</button>
-        <button class="btn btn-light btn-act btn-lg">+</button>
+        <button class="btn btn-warning btn-lg " id="btn_Clear_All">CLEAR</button>
+        <button class="btn btn-light btn-lg" id="btn_Zero">0</button>
+        <button class="btn btn-success  btn-lg" id="btn_Equals">=</button>
+        <button class="btn btn-light  btn-lg"  id="btn_Plus">+</button>
     </div>
 </main>
 
@@ -52,5 +52,93 @@
 
 <script src="../../js/Calculator/assets/boostrap/js/bootstrap.bundle.min.js"></script>
 <script src="../../js/Calculator/assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+    //Clear inputField
+    $("#btn_Clear_All").click(function () {
+        $("#txt_Equation").val("");
+    });
+
+    //Button 9
+    $("#btn_Nine").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Nine").text());
+    });
+
+    //Button 8
+    $("#btn_Eight").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Eight").text());
+    });
+
+    //Button 7
+    $("#btn_Seven").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Seven").text());
+    });
+
+    //Button 6
+    $("#btn_Six").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Six").text());
+    });
+
+    //Button 5
+    $("#btn_Five").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Five").text());
+    });
+
+    //Button 4
+    $("#btn_Four").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Four").text());
+    });
+
+    //Button 3
+    $("#btn_Three").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Three").text());
+    });
+
+    //Button 2
+    $("#btn_Two").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Two").text());
+    });
+
+    //Button 1
+    $("#btn_One").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_One").text());
+    });
+
+    //Button 0
+    $("#btn_Zero").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Zero").text());
+    });
+
+    //ButtonPlus (+)
+    $("#btn_Plus").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Plus").text());
+    });
+
+    //ButtonMinus (-)
+    $("#btn_Minus").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Minus").text());
+    });
+
+    //ButtonDivide (/)
+    $("#btn_Divide").click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Divide").text());
+    });
+
+    //ButtonMultiply (*)
+    $('#btn_Star').click(function () {
+        $("#txt_Equation").val($("#txt_Equation").val() + $("#btn_Star").text());
+    });
+    function answer() {
+        var ans = $("#txt_Equation").val();
+
+        if (ans) {
+            $("#txt_Equation").val(eval(ans));
+        }
+    }
+
+    //ButtonEquals (=)  ---> answer
+    $("#btn_Equals").click(function () {
+        answer();
+    });
+</script>
 </body>
 </html>
