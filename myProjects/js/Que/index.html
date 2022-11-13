@@ -87,6 +87,35 @@
 <script src="../../js/Que/assets/boostrap/js/bootstrap.bundle.min.js"></script>
 <script>
 
+    var firstDiv=$("#b1");
+    var secondDiv=$("#b2");
+    var thirdDiv=$("#b3");
+    var fourthDiv=$("#b4");
+    var fifthDiv=$("#b5");
+    var sixthDiv=$("#b6");
+
+    var arr=[firstDiv,secondDiv,thirdDiv,fourthDiv,fifthDiv,sixthDiv];
+
+
+    setInterval(setColors,2000);
+    var j=0;
+    function setColors(){
+        if(j==0){
+            arr[0].css("backgroundColor", "red");
+            arr[1].css("backgroundColor", "green");
+            arr[2].css("backgroundColor", "blue");
+            arr[3].css("backgroundColor", "yellow");
+            arr[4].css("backgroundColor", "violet");
+            arr[5].css("backgroundColor", "purple");
+        }
+
+
+    }
+
+
+
+
+
 </script>
 </body>
 </html>
