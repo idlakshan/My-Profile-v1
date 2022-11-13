@@ -35,6 +35,7 @@
         }
         hr{
             color: white;
+
         }
 
         .start-div{
@@ -96,8 +97,8 @@
 
     var arr=[firstDiv,secondDiv,thirdDiv,fourthDiv,fifthDiv,sixthDiv];
 
-
-    setInterval(setColors,2000);
+    setTimeout(setColors,0)
+    setInterval(setColors,500);
     var j=0;
     function setColors(){
         if(j==0){
@@ -105,10 +106,50 @@
             arr[1].css("backgroundColor", "green");
             arr[2].css("backgroundColor", "blue");
             arr[3].css("backgroundColor", "yellow");
-            arr[4].css("backgroundColor", "violet");
+            arr[4].css("backgroundColor", "pink");
             arr[5].css("backgroundColor", "purple");
+            j++;
+        }else if (j==1){
+            arr[0].css("backgroundColor", "purple");
+            arr[1].css("backgroundColor", "red");
+            arr[2].css("backgroundColor", "green");
+            arr[3].css("backgroundColor", "blue");
+            arr[4].css("backgroundColor", "yellow");
+            arr[5].css("backgroundColor", "pink");
+            j++;
+        }else if (j==2){
+            arr[0].css("backgroundColor", "pink");
+            arr[1].css("backgroundColor", "purple");
+            arr[2].css("backgroundColor", "red");
+            arr[3].css("backgroundColor", "green");
+            arr[4].css("backgroundColor", "blue");
+            arr[5].css("backgroundColor", "yellow");
+            j++;
+        }else if (j == 3) {
+            arr[0].css("backgroundColor", "yellow");
+            arr[1].css("backgroundColor", "pink");
+            arr[2].css("backgroundColor", "purple");
+            arr[3].css("backgroundColor", "red");
+            arr[4].css("backgroundColor", "green");
+            arr[5].css("backgroundColor", "blue");
+            j++
+        }else if (j == 4) {
+            arr[0].css("backgroundColor", "blue");
+            arr[1].css("backgroundColor", "yellow");
+            arr[2].css("backgroundColor", "pink");
+            arr[3].css("backgroundColor", "purple");
+            arr[4].css("backgroundColor", "red");
+            arr[5].css("backgroundColor", "green");
+            j++;
+        }else if (j == 5) {
+            arr[0].css("backgroundColor", "green");
+            arr[1].css("backgroundColor", "blue");
+            arr[2].css("backgroundColor", "yellow");
+            arr[3].css("backgroundColor", "pink");
+            arr[4].css("backgroundColor", "purple");
+            arr[5].css("backgroundColor", "red");
+            j = 0;
         }
-
 
     }
 
