@@ -5,11 +5,83 @@
     <title>Knight Rider</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+    <style>
+      body{
+          background-color: #2C2C2C;
+      }
+      h1{
+          color: white;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: max-content;
+          top: 100px;
+      }
+      #container{
+          display: flex;
+          top: 200px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: max-content;
+      }
+      #container>div{
+          width: 250px;
+          height: 90px;
+          border: 1px solid crimson;
+
+      }
+      #btnContainer>button{
+          padding: 10px;
+          color: white;
+          width: 80px;
+          height: 40px;
+          border-radius: 7px;
+          border: wave;
+
+
+      }
+      #btnContainer>button:nth-child(1){
+          background-color: limegreen;
+
+      }
+      #btnContainer>button:nth-child(2){
+          background-color: red;
+
+      }
+      #btnContainer{
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: max-content;
+          bottom: 220px;
+      }
+
+    </style>
 
 </head>
 <body>
+<h1>Knight-Rider</h1>
 
+<section id="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</section>
+
+<section id="btnContainer">
+    <button>Start</button>
+    <button>Stop</button>
+</section>
 
 <script src="../../js/Kit/assets/JQuery/jquery-3.6.1.min.js"></script>
+
 </body>
 </html>
