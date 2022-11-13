@@ -67,21 +67,54 @@
 <h1>Knight-Rider</h1>
 
 <section id="container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
 
 </section>
 
 <section id="btnContainer">
-    <button>Start</button>
+    <button id="btnStart">Start</button>
     <button>Stop</button>
 </section>
 
 <script src="../../js/Kit/assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+   var knightRider={
+       count:0,
+       temArray:[],
+       leftColorArray:['white','white','white','white','white','white','#b9a7a7','#a67d7d','#966161','#bc6061'],
+       rightColorArray:['white','white','white','white','white','white','#dc4141','#b84848','#bc6068','#966161'],
 
+       animateLeft:function (){
+           var lastColor=this.temArray.pop();
+           this.temArray.unshift(lastColor);
+       },
+       animateRight:function (){
+           var firstColor=this.temArray.shift();
+           this.temArray.push(firstColor);
+       },
+       animate:function (){
+           this.count++;
+           if (this.count<=this.leftColorArray.length){
+                 this.temArray=this.leftColorArray;
+                 this.animateLeft();
+           }else{
+               if (this.count>=this.rightColorArray.length*2){
+                 this.count=0;
+               }
+               this.temArray=this.rightColorArray;
+               this.animateRight();
+           }
+       }
+   }
+
+   function renderDives(){
+       $("#container").empty();
+       for (let i=0;i < (knightRider.temArray.length)/2;i++){
+          $("#container").append(` <div style="background-color: ${knightRider.temArray[i]}"></div>`)
+       }
+       knightRider.animate();
+   }
+
+   setInterval(renderDives,50);
+</script>
 </body>
 </html>
