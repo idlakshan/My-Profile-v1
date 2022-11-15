@@ -1,0 +1,13 @@
+input{
+    width: 310px !important;
+    margin-bottom: 4px;
+}
+
+.btn{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 4px;
+}
+h1{
+    margin-bottom: 60px;
+}
