@@ -30,7 +30,7 @@
       #container>div{
           width: 250px;
           height: 90px;
-          border: 1px solid crimson;
+          border: 1px solid black;
 
       }
       #btnContainer>button{
@@ -72,7 +72,7 @@
 
 <section id="btnContainer">
     <button id="btnStart">Start</button>
-    <button>Stop</button>
+    <button id="btnEnd">Stop</button>
 </section>
 
 <script src="../../js/Kit/assets/JQuery/jquery-3.6.1.min.js"></script>
@@ -114,7 +114,17 @@
        knightRider.animate();
    }
 
-   setInterval(renderDives,50);
+   var id=setInterval(renderDives,90);
+
+   $("#btnStart").click(function (){
+       clearInterval(id);
+       id=setInterval(renderDives,90);
+   });
+
+   $("#btnEnd").click(function (){
+          clearInterval(id);
+   });
+
 </script>
 </body>
 </html>
