@@ -30,14 +30,13 @@ ul{
 .section{
     background:var(--bg-black-900);
     min-height: 100vh;
-    display: block;
-    position: fixed;
     left: 270px;
-    top: 0;
-    right: 0;
-    z-index: 0;
     opacity: 1;
     padding: 0 30px;
+
+}
+.main-content{
+    padding-left:270px;
 
 }
 .padd-15{
@@ -234,6 +233,30 @@ h3.my-profession{
     position: relative;
 
 }
+.home-img:before{
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: -20px;
+    top: -40px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+
+}
+.home-img:after{
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    right: 20px;
+    bottom: -40px;
+    border-bottom: 10px solid var(--skin-color);
+    border-right: 10px solid var(--skin-color);
+
+}
 .home .home-img img{
     height: 400px;
+    margin: auto;
+    border-radius: 5px;
 }
