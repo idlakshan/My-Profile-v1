@@ -40,7 +40,6 @@ ul{
 }
 .main-content{
     padding-left:270px;
-
 }
 .padding-15{
     padding-left: 15px;
@@ -50,7 +49,6 @@ ul{
     max-width: 1100px;
     width: 100%;
     margin: auto;
-
 }
 .section .container{
     padding-top: 60px;
@@ -94,7 +92,7 @@ ul{
     margin-right: -15px;
     position: relative;
 }
-.btn-hire-me{
+.btn{
     font-size: 16px;
     font-weight: 500;
     padding: 12px 35px;
@@ -107,7 +105,7 @@ ul{
     transition: all 0.3s ease;
 
 }
-.btn-hire-me:hover{
+.btn:hover{
     transform: scale(1.05);
 }
 .aside{
@@ -143,7 +141,6 @@ ul{
 .aside .logo a span{
     font-family: 'Clicker Script',cursive;
     font-size: 40px;
-
 }
 .aside .logo a:before{
     content: '';
@@ -178,7 +175,6 @@ ul{
     display: none;
     align-items: center;
     justify-content: center;
-
 }
 .aside .nav-toggler span{
     height: 2px;
@@ -195,7 +191,6 @@ ul{
     position: absolute;
     top: -6px;
     left: 0;
-
 }
 .aside .nav-toggler span :after{
     content: '';
@@ -205,7 +200,6 @@ ul{
     position: absolute;
     top: 6px;
     left: 0;
-
 }
 .aside .nav{
     margin-top: 50px;
@@ -324,5 +318,42 @@ h3.my-profession{
     font-size: 16px;
     line-height:25px;
     color: var(--text-black-700);
+}
+
+.about .about-content .personal-info{
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: 40px;
+
+}
+.about .about-content .personal-info .info-item{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.about .about-content .personal-info .info-item p{
+    font-size: 16px;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+}
+.about .about-content .personal-info .info-item p span{
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 4px;
+    display: inline-block;
+}
+.about .about-content .personal-info .buttons{
+    margin-top: 30px;
+}
+.about .about-content .personal-info .buttons .btn{
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.about .about-content .skills{
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-top: 40px;
 
 }
