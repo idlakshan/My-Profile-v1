@@ -297,7 +297,7 @@ h3.my-profession{
 }
 
 
-
+/*-------------------------About-------------------*/
 .about .about-content{
     flex: 0 0 100%;
     max-width: 100%;
@@ -446,7 +446,88 @@ h3.my-profession{
     background-color: var(--skin-color);
 
 }
-.about .about-content .timeline .circle-dot{
+.about .about-content .timeline .timeline-item .circle-dot{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--skin-color);
+    border-radius: 50%;
 
+}
+.about .about-content .timeline .timeline-item .timeline-date{
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-black-700);
+
+}
+.about .about-content .timeline .timeline-item .timeline-date .fa{
+    margin-right: 5px;
+}
+.about .about-content .timeline .timeline-item .timeline-title{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+
+}
+.about .about-content .timeline .timeline-item .timeline-text{
+    line-height: 25px;
+    text-align: justify;
+    font-size: 16px;
+    color: var(--text-black-700);
+}
+
+/*-------------------------Service-------------------*/
+.service .container{
+    padding-bottom:40px;
+}
+.service .service-item{
+    margin-bottom: 30px;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+.service .service-item .service-item-inner{
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.service .service-item .service-item-inner:hover{
+    box-shadow: 0 0 20px rgba(48,46,77,0.15);
+}
+.service .service-item .service-item-inner .icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+    transition: all 0.3s ease;
+
+}
+.service .service-item .service-item-inner .icon .fa{
+    font-size: 40px;
+    line-height: 60px;
+    color: var(--skin-color);
+    transition: all 0.3s ease;
+}
+.service .service-item .service-item-inner:hover .icon{
+    background: var(--skin-color);
+}
+.service .service-item .service-item-inner:hover .icon .fa{
+    font-size: 25px;
+    color: #ffffff;
+
+}
+.service .service-item .service-item-inner h4{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    font-weight: 700;
 
 }
