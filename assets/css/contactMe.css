@@ -149,6 +149,7 @@ body {
 }
 .contact-form .send-btn:hover {
     background: #0c6b56;
+    transform: scale(1.1);
 }
 
 footer {

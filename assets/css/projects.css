@@ -101,7 +101,7 @@
 .btn:hover{
 
     border: 1px solid  #24987E;
-    transition: 0.5s;
+    transform: scale(1.1);
     background: #0c6b56;
 }
 
