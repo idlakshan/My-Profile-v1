@@ -15,7 +15,7 @@
 #### This website shows some information about my career.I categorize them into sections.
 * Home Page.
 * About Me.
-* services.
+* Services.
 * Skills.
 * Projects.
 * Contact Me.
@@ -74,3 +74,37 @@ Contact
 
 ---
 
+# Web-POS System (Bootstrap)
+
+---
+### Description.
+
+
+#### SPA POS System. can Manage customers and items and place an order.
+* Dashboard.
+* Customer.
+* Items.
+* Place Order.
+---
+### Technology,Tools & Framework
+
+* HTML.
+* CSS.
+* Java Script
+* jQuery.
+* Bootstrap.
+* IntelliJ IDEA.
+---
+# SPA POS View
+
+Dashboard
+![Dashboard!](assets/images/ReadmeImg/dashboard.png)
+
+Customer Page
+![Customer!](assets/images/ReadmeImg/customer.png)
+
+Item Page
+![Item!](assets/images/ReadmeImg/items.png)
+
+Order Page
+![Order!](assets/images/ReadmeImg/order.png)
